@@ -7,22 +7,22 @@
 <!-- action-docs-inputs source="action.yml" -->
 ## Inputs
 
-| name | description | required | default |
-| --- | --- | --- | --- |
-| `upload_url` | <p>The upload<em>url of the release (e.g. github.event.release.upload</em>url)</p> | `true` | `""` |
-| `asset_path` | <p>Local path to the file to upload</p> | `true` | `""` |
-| `asset_name` | <p>Name the asset will have on the release</p> | `true` | `""` |
-| `asset_content_type` | <p>Content-Type of the asset (e.g. 'application/zip')</p> | `true` | `""` |
-| `publish_draft` | <p>If the release is a draft, publish it after the asset uploads successfully</p> | `false` | `true` |
+| name                 | description                                                                        | required | default |
+|----------------------|------------------------------------------------------------------------------------|----------|---------|
+| `upload_url`         | <p>The upload<em>url of the release (e.g. github.event.release.upload</em>url)</p> | `true`   | `""`    |
+| `asset_path`         | <p>Local path to the file to upload</p>                                            | `true`   | `""`    |
+| `asset_name`         | <p>Name the asset will have on the release</p>                                     | `true`   | `""`    |
+| `asset_content_type` | <p>Content-Type of the asset (e.g. 'application/zip')</p>                          | `true`   | `""`    |
+| `publish_draft`      | <p>If the release is a draft, publish it after the asset uploads successfully</p>  | `false`  | `true`  |
 <!-- action-docs-inputs source="action.yml" -->
 
 <!-- action-docs-outputs source="action.yml" -->
 ## Outputs
 
-| name | description |
-| --- | --- |
-| `asset_id` | <p>ID of the uploaded asset</p> |
-| `asset_url` | <p>API URL of the uploaded asset</p> |
+| name                   | description                                      |
+|------------------------|--------------------------------------------------|
+| `asset_id`             | <p>ID of the uploaded asset</p>                  |
+| `asset_url`            | <p>API URL of the uploaded asset</p>             |
 | `browser_download_url` | <p>Public download URL of the uploaded asset</p> |
 <!-- action-docs-outputs source="action.yml" -->
 
@@ -30,7 +30,7 @@
 ## Usage
 
 ```yaml
-- uses: aliciousness/ACTION-upload-release-asset@v1.0.0
+- uses: aliciousness/ACTION-upload-release-asset@v0.0.1
   with:
     upload_url:
     # The upload_url of the release (e.g. github.event.release.upload_url)
@@ -67,7 +67,7 @@
 ## Usage
 
 ```yaml
-- uses: aliciousness/ACTION-upload-release-asset@v1
+- uses: aliciousness/ACTION-upload-release-asset@v0
   env:
     GITHUB_TOKEN: ${{ github.token }}
   with:

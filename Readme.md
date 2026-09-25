@@ -67,7 +67,7 @@
 ## Usage
 
 ```yaml
-- uses: aliciousness/ACTION-upload-release-asset@v0
+- uses: aliciousness/upload-release-asset@v0
   env:
     GITHUB_TOKEN: ${{ github.token }}
   with:

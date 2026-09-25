@@ -17,7 +17,7 @@ inputs:
   publish_draft:
     description: "If the release is a draft, publish it after the asset uploads successfully"
     required: false
-    default: "true"
+    default: "false"
 
 outputs:
   asset_id:

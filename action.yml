@@ -1,15 +1,36 @@
-name: 'ACTION-template'
-description: 'Boilerplate for creating a new action'
+name: "ACTION-upload-release-asset"
+description: "Upload a release asset to a GitHub release. Fails with guidance on immutable releases; optionally publishes a draft release after upload."
 
 inputs:
-  name:
-    description: 'Your name'
+  upload_url:
+    description: "The upload_url of the release (e.g. github.event.release.upload_url)"
     required: true
+  asset_path:
+    description: "Local path to the file to upload"
+    required: true
+  asset_name:
+    description: "Name the asset will have on the release"
+    required: true
+  asset_content_type:
+    description: "Content-Type of the asset (e.g. 'application/zip')"
+    required: true
+  publish_draft:
+    description: "If the release is a draft, publish it after the asset uploads successfully"
+    required: false
+    default: "true"
 
 outputs:
-  greeting:
-    description: 'A greeting message'
+  asset_id:
+    description: "ID of the uploaded asset"
+  asset_url:
+    description: "API URL of the uploaded asset"
+  browser_download_url:
+    description: "Public download URL of the uploaded asset"
 
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node24"
+  main: "dist/index.js"
+
+branding:
+  icon: "upload-cloud"
+  color: "gray-dark"
